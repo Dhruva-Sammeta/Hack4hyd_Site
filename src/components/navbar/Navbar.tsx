@@ -42,7 +42,7 @@ const mobileItemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.12 + i * 0.06,
+      delay: 0.15 + i * 0.06,
       duration: 0.4,
       ease: [0.22, 1, 0.36, 1] as const,
     },
@@ -56,14 +56,15 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ── Top nav bar ─────────────────────────────────────── */}
       <motion.nav
         variants={navbarVariants}
         initial="hidden"
         animate="visible"
-        className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl"
+        className="fixed top-5 left-1/2 -translate-x-1/2 z-[60] w-[calc(100%-2rem)] max-w-5xl"
       >
         <div className="glass-liquid glass-hover rounded-2xl px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-500">
-          {/* Brand: Favicon icon + OAKRIDGE MUN XVI */}
+          {/* Brand */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <Image
               src="/favicon.svg"
@@ -126,7 +127,7 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile fullscreen overlay */}
+      {/* ── Mobile fullscreen overlay ───────────────────────── */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -134,24 +135,27 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-50 md:hidden"
+            className="fixed inset-0 z-[55] flex flex-col items-center justify-center md:hidden"
           >
-            <div className="absolute inset-0 bg-oakridge-navy/95 backdrop-blur-xl" />
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-oakridge-navy/98 backdrop-blur-2xl" />
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full gap-6">
-              {/* Brand in mobile menu */}
-              <div className="mb-8 flex flex-col items-center gap-3">
+            {/* Nav items — centered in viewport */}
+            <nav className="relative z-10 flex flex-col items-center gap-5">
+              {/* Mobile brand */}
+              <div className="mb-6 flex flex-col items-center gap-2">
                 <Image
                   src="/favicon.svg"
                   alt="Draft MUN"
-                  width={56}
-                  height={56}
+                  width={48}
+                  height={48}
                   className="drop-shadow-xl"
                 />
-                <span className="text-oakridge-warm-white font-black text-lg tracking-[0.1em] uppercase">
-                  MUN <span className="text-oakridge-teal">XVI</span>
+                <span className="text-oakridge-warm-white/60 font-black text-sm tracking-[0.15em] uppercase">
+                  Chapter XVI
                 </span>
               </div>
+
               {NAV_ITEMS.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -160,18 +164,21 @@ export default function Navbar() {
                   initial="closed"
                   animate="open"
                   exit="closed"
-                  className={`text-2xl font-semibold tracking-wider transition-colors duration-300 ${
-                    pathname === item.href
-                      ? "text-oakridge-teal"
-                      : "text-oakridge-warm-white/80 hover:text-oakridge-teal"
-                  }`}
                 >
-                  <Link href={item.href} onClick={() => setIsOpen(false)}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`block text-center text-2xl font-bold tracking-wide transition-colors duration-300 ${
+                      pathname === item.href
+                        ? "text-oakridge-teal"
+                        : "text-oakridge-warm-white hover:text-oakridge-teal"
+                    }`}
+                  >
                     {item.label}
                   </Link>
                 </motion.div>
               ))}
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>
