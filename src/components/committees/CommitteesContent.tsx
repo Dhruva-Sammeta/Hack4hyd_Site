@@ -71,7 +71,7 @@ export default function CommitteesContent() {
         </div>
 
         {/* Committee List */}
-        <div className="grid">
+        <div className="grid gap-4">
           {committeesData.map((committee, index) => (
             <CommitteeCard
               key={committee.slug}

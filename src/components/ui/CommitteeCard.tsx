@@ -47,11 +47,11 @@ export default function CommitteeCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-70px" }}
       transition={{ duration: 0.65, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
-      className={`group border-t border-oakridge-teal/15 last:border-b rounded-xl transition-all duration-300 hover:bg-oakridge-warm-white hover:scale-[1.015] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 hover:border-transparent hover:z-10 ${glowColor[difficulty]}`}
+      className={`group mx-auto w-full max-w-6xl rounded-2xl border border-oakridge-teal/15 bg-oakridge-paper/40 shadow-[0_12px_30px_rgba(1,8,14,0.25)] transition-all duration-300 hover:bg-oakridge-warm-white hover:scale-[1.012] hover:shadow-[0_18px_36px_rgba(1,8,14,0.3)] hover:-translate-y-0.5 hover:border-transparent hover:z-10 ${glowColor[difficulty]}`}
     >
       <Wrapper
         {...wrapperProps}
-        className="grid w-full min-h-[130px] grid-cols-[50px_1fr] gap-4 px-4 py-6 text-left md:grid-cols-[60px_48px_minmax(200px,0.4fr)_1fr_auto] md:items-center md:gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oakridge-teal/60 focus-visible:ring-offset-2 focus-visible:ring-offset-oakridge-navy"
+        className="grid w-full min-h-[130px] grid-cols-[50px_1fr] items-center gap-4 px-4 py-6 text-left md:grid-cols-[60px_48px_minmax(200px,0.4fr)_1fr_auto] md:gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oakridge-teal/60 focus-visible:ring-offset-2 focus-visible:ring-offset-oakridge-navy"
       >
         <span className="font-mono text-sm font-black text-oakridge-red group-hover:text-oakridge-red">{number}.</span>
         <span className="hidden md:block text-lg font-black italic text-oakridge-teal/40 tracking-wide group-hover:text-oakridge-dark-teal">

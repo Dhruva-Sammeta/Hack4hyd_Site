@@ -43,7 +43,7 @@ export default function CommitteeModal({ committee, onClose }: CommitteeModalPro
     <AnimatePresence>
       {committee && (
         <motion.div
-          className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-8"
+          className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6 sm:p-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -62,14 +62,14 @@ export default function CommitteeModal({ committee, onClose }: CommitteeModalPro
             role="dialog"
             aria-modal="true"
             aria-labelledby={`committee-title-${committee.slug}`}
-            className="relative w-full max-w-4xl overflow-hidden rounded-3xl glass-liquid shadow-[0_35px_90px_rgba(1,8,14,0.7)]"
+            className="relative w-full max-w-4xl overflow-hidden rounded-3xl glass-liquid shadow-[0_35px_90px_rgba(1,8,14,0.7)] flex max-h-[90vh] flex-col"
             initial={{ y: 30, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 20, opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex flex-wrap items-start justify-between gap-4 border-b border-oakridge-teal/10 px-6 py-5">
+            <div className="flex flex-wrap items-start justify-between gap-4 border-b border-oakridge-teal/10 px-6 py-5 shrink-0">
               <div>
                 <p className="section-kicker text-oakridge-teal/70">{committee.type}</p>
                 <h2
@@ -89,7 +89,7 @@ export default function CommitteeModal({ committee, onClose }: CommitteeModalPro
               </button>
             </div>
 
-            <div className="grid gap-6 px-6 pb-6 pt-5 md:grid-cols-[1.15fr_0.85fr] max-h-[80vh] overflow-y-auto">
+            <div className="grid gap-6 px-6 pb-6 pt-5 md:grid-cols-[1.15fr_0.85fr] overflow-y-auto flex-1 min-h-0">
               <div className="space-y-5">
                 <div className="rounded-2xl border border-oakridge-teal/15 bg-oakridge-navy/70 p-5">
                   <p className="section-kicker mb-3">Agenda</p>
