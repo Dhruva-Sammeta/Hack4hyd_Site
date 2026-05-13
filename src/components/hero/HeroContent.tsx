@@ -70,9 +70,9 @@ export default function HeroContent() {
         <Image
           src="/favicon.svg"
           alt="Draft MUN Crest"
-          width={64}
-          height={64}
-          className="mx-auto drop-shadow-[0_0_40px_rgba(48,205,215,0.3)] sm:w-20 sm:h-20"
+          width={200}
+          height={200}
+          className="mx-auto w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[200px] md:h-[200px] drop-shadow-[0_0_60px_rgba(48,205,215,0.35)]"
           priority
         />
       </motion.div>

@@ -29,17 +29,14 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
           {/* Brand column */}
           <div>
-            <div className="mb-5 flex items-center gap-3">
+            <div className="mb-5">
               <Image
-                src="/favicon.png"
+                src="/favicon.svg"
                 alt="Draft MUN"
-                width={36}
-                height={36}
+                width={52}
+                height={52}
                 className="drop-shadow-md"
               />
-              <span className="font-black text-oakridge-warm-white text-sm uppercase tracking-[0.08em]">
-                OAKRIDGE MUN <span className="text-oakridge-teal">XVI</span>
-              </span>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-oakridge-muted">
               Celebrating 16 years of diplomacy, debate, and leadership. Chapter XVI brings together 650+ delegates across 20 committees.
