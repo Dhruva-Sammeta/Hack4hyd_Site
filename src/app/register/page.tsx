@@ -9,10 +9,10 @@ export const metadata = {
 
 export default function RegisterPage() {
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content)] px-4 sm:px-6">
         <div className="mb-14 text-center">
           <p className="section-kicker">Chapter XVI</p>
           <h1 className="display-title">Delegate registration.</h1>
@@ -21,8 +21,8 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        <div className="thin-panel mx-auto grid max-w-4xl gap-8 p-7 text-center md:grid-cols-[1fr_1.2fr] md:p-10 md:text-left">
-          <div className="grid min-h-[280px] place-content-center rounded-[24px] bg-oakridge-navy p-8 text-oakridge-warm-white">
+        <div className="thin-panel mx-auto grid max-w-[var(--content-narrow)] gap-6 p-5 text-center sm:p-7 md:grid-cols-[1fr_1.2fr] md:p-10 md:text-left">
+          <div className="grid min-h-[240px] place-content-center rounded-[24px] bg-oakridge-navy p-6 text-oakridge-warm-white sm:min-h-[280px] sm:p-8">
             <span className="font-sans text-7xl font-black leading-none text-oakridge-teal">650+</span>
             <span className="mt-4 text-xs font-black uppercase tracking-[0.25em] text-oakridge-light-teal">
               Delegate seats

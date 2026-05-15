@@ -15,8 +15,8 @@ const itemVariants = {
 
 export default function ScheduleSection() {
   return (
-    <section id="schedule" className="relative bg-oakridge-navy py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="schedule" className="site-section py-20 sm:py-24 md:py-28">
+      <div className="mx-auto max-w-[var(--content)] px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"

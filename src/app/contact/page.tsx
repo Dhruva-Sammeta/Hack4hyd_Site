@@ -11,10 +11,10 @@ const INSTAGRAM_URL = "https://www.instagram.com/oakmun.official";
 
 export default function ContactPage() {
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content-narrow)] px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16">
           <p className="section-kicker">Get in Touch</p>
@@ -30,7 +30,7 @@ export default function ContactPage() {
           {/* Email */}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="group thin-panel flex flex-col gap-6 p-8 transition-all duration-300 hover:border-oakridge-teal/40"
+            className="group thin-panel flex flex-col gap-5 p-6 transition-all duration-300 hover:border-oakridge-teal/40 sm:gap-6 sm:p-8"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-oakridge-teal/30 bg-oakridge-teal/10 text-oakridge-teal transition-colors group-hover:bg-oakridge-teal/20">
               <svg
@@ -68,7 +68,7 @@ export default function ContactPage() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group thin-panel flex flex-col gap-6 p-8 transition-all duration-300 hover:border-oakridge-teal/40"
+            className="group thin-panel flex flex-col gap-5 p-6 transition-all duration-300 hover:border-oakridge-teal/40 sm:gap-6 sm:p-8"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-oakridge-teal/30 bg-oakridge-teal/10 text-oakridge-teal transition-colors group-hover:bg-oakridge-teal/20">
               {/* Instagram icon */}

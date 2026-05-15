@@ -9,10 +9,10 @@ export const metadata = {
 
 export default function ResourcesPage() {
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content)] px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16 flex flex-col gap-6">
           <div>
@@ -23,7 +23,7 @@ export default function ResourcesPage() {
             </p>
           </div>
         </div>
-        <div className="thin-panel px-8 py-10 text-center">
+        <div className="thin-panel px-5 py-8 text-center sm:px-8 sm:py-10">
           <p className="section-kicker">Updates soon</p>
           <h2 className="mt-3 font-sans text-2xl font-black tracking-[-0.04em] text-oakridge-warm-white sm:text-3xl">
             Resources will be released shortly.

@@ -140,10 +140,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQPage() {
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content-narrow)] px-4 sm:px-6">
         <div className="mb-14">
           <p className="section-kicker mb-3">Support</p>
           <h1 className="display-title">Frequently asked questions.</h1>
@@ -164,7 +164,7 @@ export default function FAQPage() {
               <h2 className="mb-4 text-[11px] font-black uppercase tracking-[0.22em] text-oakridge-teal">
                 {section.category}
               </h2>
-              <div className="thin-panel divide-y-0 overflow-hidden px-6 sm:px-8">
+              <div className="thin-panel divide-y-0 overflow-hidden px-4 sm:px-8">
                 {section.items.map((item) => (
                   <FAQItem key={item.q} q={item.q} a={item.a} />
                 ))}

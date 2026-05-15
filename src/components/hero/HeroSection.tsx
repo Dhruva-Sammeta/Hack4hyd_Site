@@ -6,7 +6,10 @@ import HeroContent from "./HeroContent";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-hero-gradient">
+    <section
+      id="hero"
+      className="relative isolate min-h-[100svh] w-full overflow-hidden bg-hero-gradient pb-14 pt-[var(--nav-safe)] sm:pb-18 lg:pb-20"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -14,15 +17,14 @@ export default function HeroSection() {
           loop
           muted
           playsInline
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-95"
           poster="/media/hero-poster.jpg"
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
         {/* Cinematic overlay stack */}
-        <div className="absolute inset-0 bg-hero-gradient opacity-92" />
-        <div className="absolute inset-0 bg-oakridge-deep/40" />
-        <div className="absolute inset-x-3 top-[10vh] bottom-[8vh] rounded-[2rem] border border-oakridge-teal/10 glass-frosted opacity-85 sm:inset-x-5 sm:top-[11vh] sm:bottom-[9vh] lg:inset-x-[7vw] lg:top-[12vh] lg:bottom-[11vh] lg:rounded-[var(--radius)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,11,19,0.42)_0%,rgba(4,22,36,0.28)_42%,rgba(2,11,19,0.68)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(48,205,215,0.04),rgba(2,11,19,0.18)_62%,rgba(2,11,19,0.58)_100%)]" />
       </div>
 
       {/* Subtle animated vignette border */}
@@ -30,15 +32,15 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
         transition={{ duration: 2, delay: 0.5 }}
-        className="lines z-[1]"
+        className="lines z-[1] hidden sm:block"
       />
 
-      {/* Premium glass frosted overlay */}
+      {/* Premium glass edge, kept light so the video remains visible */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 0.55 }}
         transition={{ duration: 2.8 }}
-        className="absolute inset-x-3 inset-y-3 z-[2] pointer-events-none rounded-[1.75rem] glass-liquid sm:inset-x-5 sm:inset-y-5 lg:inset-x-6 lg:inset-y-6"
+        className="pointer-events-none absolute inset-x-3 bottom-4 top-[calc(var(--nav-safe)-1rem)] z-[2] rounded-[1.75rem] border border-oakridge-teal/12 bg-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:inset-x-5 sm:bottom-5 lg:inset-x-6 lg:bottom-6"
       />
 
       {/* Ambient glow orbs */}
@@ -51,7 +53,7 @@ export default function HeroSection() {
         <motion.div
           animate={{ x: [0, -25, 15, 0], y: [0, 15, -25, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-gold/[0.05] blur-3xl"
+          className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-gold/[0.035] blur-3xl"
         />
         <motion.div
           animate={{ x: [0, 15, -10, 0], y: [0, 25, -15, 0] }}
@@ -68,7 +70,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.5, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
       >
         <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-oakridge-muted/60">Scroll</span>
         <motion.div

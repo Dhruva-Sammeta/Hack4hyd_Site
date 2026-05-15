@@ -20,9 +20,9 @@ const itemVariants = {
 
 export default function SecGenNote() {
   return (
-    <section className="relative bg-oakridge-navy py-24 sm:py-32 overflow-hidden">
+    <section className="site-section py-20 sm:py-28 md:py-32">
       {/* Subtle background accent */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.045]">
         <Image
           src="/favicon.svg"
           alt=""
@@ -38,8 +38,9 @@ export default function SecGenNote() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.25 }}
-        className="relative z-10 mx-auto max-w-4xl px-6"
+        className="relative z-10 mx-auto max-w-[var(--content-narrow)] px-4 sm:px-6"
       >
+        <div className="glass-liquid rounded-[2rem] px-5 py-8 sm:rounded-[2.5rem] sm:px-8 sm:py-10 md:px-12 md:py-12">
         {/* Kicker */}
         <motion.p
           variants={itemVariants}
@@ -92,6 +93,7 @@ export default function SecGenNote() {
           every delegate to think beyond the familiar. Whether this is your
           first time at a MUN or your tenth, we welcome you.
         </motion.p>
+        </div>
       </motion.div>
     </section>
   );

@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const committee = committeesData.find((c) => c.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const committee = committeesData.find((c) => c.slug === slug);
   if (!committee) return { title: "Not Found" };
 
   return {
@@ -21,9 +22,10 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function CommitteeDetail({ params }: { params: { slug: string } }) {
-  const committee = committeesData.find((c) => c.slug === params.slug);
-  const committeeIndex = committeesData.findIndex((c) => c.slug === params.slug);
+export default async function CommitteeDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const committee = committeesData.find((c) => c.slug === slug);
+  const committeeIndex = committeesData.findIndex((c) => c.slug === slug);
 
   if (!committee) {
     notFound();
@@ -39,10 +41,10 @@ export default function CommitteeDetail({ params }: { params: { slug: string } }
       ];
 
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content)] px-4 sm:px-6">
         {/* Breadcrumb */}
         <nav className="mb-8 flex items-center gap-2 text-sm text-oakridge-muted">
           <Link href="/committees" className="hover:text-oakridge-teal transition-colors">
@@ -99,7 +101,7 @@ export default function CommitteeDetail({ params }: { params: { slug: string } }
           {/* Committee Details Grid */}
           <section className="border-b border-oakridge-teal/10 py-8">
             <p className="section-kicker mb-4">Committee Details</p>
-            <div className="grid grid-cols-3 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-4">
               {[
                 { label: "Type", value: committee.type },
                 { label: "Chapter", value: "XVI" },

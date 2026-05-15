@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,17 +25,6 @@ const navbarVariants = {
   },
 };
 
-const mobileMenuVariants = {
-  closed: {
-    opacity: 0,
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as const },
-  },
-  open: {
-    opacity: 1,
-    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 const mobileItemVariants = {
   closed: { y: 20, opacity: 0 },
   open: (i: number) => ({
@@ -54,6 +43,14 @@ export default function Navbar() {
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    if (isOpen) document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <>
       {/* ── Top nav bar ─────────────────────────────────────── */}
@@ -61,20 +58,20 @@ export default function Navbar() {
         variants={navbarVariants}
         initial="hidden"
         animate="visible"
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] w-[calc(100%-1rem)] max-w-[var(--content)] sm:top-5 sm:w-[calc(100%-2rem)]"
+        className="fixed left-1/2 top-[calc(env(safe-area-inset-top)+0.75rem)] z-[80] w-[calc(100%-1.25rem)] max-w-[var(--content)] -translate-x-1/2 sm:top-[calc(env(safe-area-inset-top)+1rem)] sm:w-[calc(100%-2rem)]"
       >
-        <div className="glass-liquid glass-hover rounded-2xl px-3 py-2.5 flex items-center justify-between gap-3 sm:px-5 sm:py-3 lg:px-6 xl:gap-6 transition-all duration-500">
+        <div className="glass-liquid glass-hover flex min-h-[64px] items-center justify-between gap-2 rounded-2xl px-3 py-2.5 transition-all duration-500 sm:min-h-[72px] sm:px-5 sm:py-3 lg:px-6 xl:gap-6">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+          <Link href="/" className="group flex min-w-0 shrink-0 items-center gap-2.5">
             <Image
               src="/favicon.svg"
               alt="Oakridge MUN Crest"
               width={32}
               height={32}
-              className="drop-shadow-md"
+              className="h-10 w-10 shrink-0 drop-shadow-md sm:h-11 sm:w-11"
               priority
             />
-            <span className="text-oakridge-warm-white font-black text-sm tracking-[0.08em] uppercase group-hover:text-oakridge-teal transition-colors duration-300 sm:text-[15px]">
+            <span className="truncate text-[clamp(0.78rem,3.8vw,1rem)] font-black uppercase tracking-[0.07em] text-oakridge-warm-white transition-colors duration-300 group-hover:text-oakridge-teal sm:tracking-[0.08em]">
               OAKRIDGE MUN <span className="text-oakridge-teal">XVI</span>
             </span>
           </Link>
@@ -105,8 +102,9 @@ export default function Navbar() {
           {/* Hamburger - mobile */}
           <button
             onClick={toggle}
-            className="lg:hidden relative z-[70] w-11 h-11 flex flex-col items-center justify-center gap-1.5 group overflow-visible"
+            className="group relative z-[90] flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-1.5 overflow-visible rounded-full border border-oakridge-teal/10 bg-oakridge-deep/20 lg:hidden"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             <motion.span
               animate={isOpen ? { rotate: 45, y: 4, backgroundColor: "#30cdd7" } : { rotate: 0, y: 0, backgroundColor: "#e9eff5" }}
@@ -130,31 +128,31 @@ export default function Navbar() {
       {/* ── Mobile Side Panel Overlay ───────────────────────── */}
       <AnimatePresence>
         {isOpen && (
-          <div className="fixed inset-0 z-[65] lg:hidden">
+          <div className="fixed inset-0 z-[70] lg:hidden">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="absolute inset-0 bg-oakridge-navy/60 backdrop-blur-md"
+              className="absolute inset-0 bg-oakridge-ink/72 backdrop-blur-md"
             />
 
-            {/* Side Panel */}
+            {/* Rounded menu panel, offset below the fixed nav */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-[80%] max-w-sm bg-oakridge-deep border-l border-oakridge-teal/20 p-8 pt-24 flex flex-col"
+              initial={{ opacity: 0, y: -14, clipPath: "inset(0 0 100% 0 round 24px)" }}
+              animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 24px)" }}
+              exit={{ opacity: 0, y: -10, clipPath: "inset(0 0 100% 0 round 24px)" }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="glass-liquid absolute inset-x-3 bottom-3 top-[var(--nav-safe)] flex flex-col overflow-y-auto rounded-[24px] p-6"
             >
-              <div className="mb-12 flex flex-col items-start gap-4">
+              <div className="mb-8 flex items-center gap-4">
                 <Image
                   src="/favicon.svg"
                   alt="Oakridge MUN"
                   width={64}
                   height={64}
-                  className="drop-shadow-xl"
+                  className="h-14 w-14 shrink-0 drop-shadow-xl"
                 />
                 <div>
                   <h3 className="text-oakridge-warm-white font-black text-xl tracking-wider uppercase leading-tight">
@@ -166,7 +164,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <nav className="flex flex-col gap-6">
+              <nav className="flex flex-col gap-4">
                 {NAV_ITEMS.map((item, i) => (
                   <motion.div
                     key={item.label}
@@ -194,7 +192,7 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              <div className="mt-auto">
+              <div className="mt-10">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-oakridge-muted mb-4">
                   Conference Dates
                 </p>

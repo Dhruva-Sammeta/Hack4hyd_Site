@@ -18,7 +18,7 @@ export default function CommitteePreviewSection() {
   const featured = committeesData.slice(0, 8);
 
   return (
-    <section className="relative bg-oakridge-navy py-20 md:py-28">
+    <section className="site-section py-24 sm:py-28 md:py-32">
       <div className="mx-auto max-w-[var(--content)] px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -50,7 +50,7 @@ export default function CommitteePreviewSection() {
               <motion.div key={committee.slug} variants={itemVariants}>
                 <Link
                   href={`/committees/${committee.slug}`}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-oakridge-teal/15 bg-oakridge-paper/40 p-5 transition-all duration-300 hover:border-oakridge-gold/40 hover:shadow-[0_0_24px_rgba(188,154,110,0.18)]"
+              className="group glass-liquid relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:border-oakridge-gold/40"
                 >
                   <span className="committee-numeral absolute -right-2 -top-4 text-7xl leading-none select-none">
                     {committee.symbol}
@@ -60,7 +60,7 @@ export default function CommitteePreviewSection() {
                       <span className="text-xs font-black italic text-oakridge-teal/60 tracking-wide">
                         {committee.symbol}
                       </span>
-                      <span className="rounded-full bg-oakridge-deep px-3 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-oakridge-dark-teal">
+                      <span className="rounded-full bg-oakridge-deep/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-oakridge-dark-teal">
                         {committee.type}
                       </span>
                     </div>

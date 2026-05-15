@@ -43,10 +43,10 @@ export default function CommitteesContent() {
   }, [activeSlug]);
 
   return (
-    <div className="relative min-h-screen bg-oakridge-navy pt-36 pb-24">
+    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
       <BackgroundGrid />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-[var(--content)] px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16">
           <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
