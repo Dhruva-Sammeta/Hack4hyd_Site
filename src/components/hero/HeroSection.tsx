@@ -20,8 +20,9 @@ export default function HeroSection() {
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
         {/* Cinematic overlay stack */}
-        <div className="absolute inset-0 bg-hero-gradient opacity-85" />
-        <div className="absolute inset-0 bg-oakridge-deep/45" />
+        <div className="absolute inset-0 bg-hero-gradient opacity-92" />
+        <div className="absolute inset-0 bg-oakridge-deep/40" />
+        <div className="absolute inset-x-[7vw] top-[12vh] bottom-[11vh] rounded-[var(--radius)] border border-oakridge-teal/10 glass-frosted opacity-85" />
       </div>
 
       {/* Subtle animated vignette border */}
@@ -32,17 +33,30 @@ export default function HeroSection() {
         className="lines z-[1]"
       />
 
+      {/* Premium glass frosted overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2.8 }}
+        className="absolute inset-0 z-[2] pointer-events-none mx-6 rounded-[2rem] glass-liquid"
+      />
+
       {/* Ambient glow orbs */}
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
         <motion.div
           animate={{ x: [0, 30, -20, 0], y: [0, -20, 10, 0] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[15%] left-[10%] h-64 w-64 rounded-full bg-oakridge-teal/[0.04] blur-3xl"
+          className="absolute top-[15%] left-[10%] h-64 w-64 rounded-full bg-oakridge-teal/[0.06] blur-3xl"
         />
         <motion.div
           animate={{ x: [0, -25, 15, 0], y: [0, 15, -25, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-teal/[0.03] blur-3xl"
+          className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-gold/[0.05] blur-3xl"
+        />
+        <motion.div
+          animate={{ x: [0, 15, -10, 0], y: [0, 25, -15, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[50%] right-[20%] h-56 w-56 rounded-full bg-oakridge-teal/[0.05] blur-3xl"
         />
       </div>
 
