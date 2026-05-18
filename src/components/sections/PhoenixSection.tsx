@@ -9,9 +9,6 @@ export default function PhoenixSection() {
     <section 
       className="site-section py-20 sm:py-28 md:py-36"
     >
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-[38%] h-[min(80vw,640px)] w-[min(80vw,640px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-oakridge-teal/[0.08] blur-3xl" />
-
       <div className="relative z-10 mx-auto flex max-w-[var(--content)] flex-col items-center px-4 text-center sm:px-6">
         {/* Phoenix image */}
         <motion.div
@@ -19,7 +16,7 @@ export default function PhoenixSection() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="phoenix-float media-glass mb-10 rounded-[2rem] p-5 sm:mb-12 sm:rounded-[2.5rem] sm:p-8"
+          className="media-glass mb-10 rounded-[2rem] p-5 sm:mb-12 sm:rounded-[2.5rem] sm:p-8"
         >
           <Image
             src="/media/phoenix.png"

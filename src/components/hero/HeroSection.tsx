@@ -46,21 +46,8 @@ export default function HeroSection() {
 
       {/* Ambient glow orbs */}
       <div className="pointer-events-none absolute inset-0 z-[1] hidden overflow-hidden md:block">
-        <motion.div
-          animate={{ x: [0, 30, -20, 0], y: [0, -20, 10, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[15%] left-[10%] h-64 w-64 rounded-full bg-oakridge-teal/[0.06] blur-3xl"
-        />
-        <motion.div
-          animate={{ x: [0, -25, 15, 0], y: [0, 15, -25, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-gold/[0.035] blur-3xl"
-        />
-        <motion.div
-          animate={{ x: [0, 15, -10, 0], y: [0, 25, -15, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[50%] right-[20%] h-56 w-56 rounded-full bg-oakridge-teal/[0.05] blur-3xl"
-        />
+        <div className="absolute left-[10%] top-[15%] h-64 w-64 rounded-full bg-oakridge-teal/[0.045] blur-2xl" />
+        <div className="absolute bottom-[20%] right-[8%] h-80 w-80 rounded-full bg-oakridge-gold/[0.028] blur-2xl" />
       </div>
 
       {/* Hero Content */}

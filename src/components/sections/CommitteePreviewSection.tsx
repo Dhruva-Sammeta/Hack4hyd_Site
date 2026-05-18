@@ -45,41 +45,36 @@ export default function CommitteePreviewSection() {
             </Link>
           </motion.div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((committee) => (
-              <motion.div key={committee.slug} variants={itemVariants}>
-                <Link
-                  href={`/committees/${committee.slug}`}
-              className="group glass-liquid relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:border-oakridge-gold/40"
-                >
-                  <span className="committee-numeral absolute -right-2 -top-4 text-7xl leading-none select-none">
-                    {committee.symbol}
-                  </span>
-                  <div className="relative z-10">
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className="text-xs font-black italic text-oakridge-teal/60 tracking-wide">
-                        {committee.symbol}
-                      </span>
-                      <span className="rounded-full bg-oakridge-deep/80 px-3 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-oakridge-dark-teal">
-                        {committee.type}
-                      </span>
-                    </div>
-                    <h3 className="font-sans text-xl font-black text-oakridge-warm-white transition-colors duration-300 group-hover:text-oakridge-teal">
-                      {committee.name}
-                    </h3>
-                    <p className="mt-1.5 text-xs text-oakridge-muted leading-relaxed line-clamp-2">
-                      {committee.fullName}
-                    </p>
-                    <div className="mt-auto pt-4 flex items-center justify-end">
-                      <span className="text-oakridge-teal/40 text-xs font-bold group-hover:text-oakridge-teal transition-colors tracking-wider uppercase">
-                        View &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+          <motion.div variants={itemVariants} className="glass-liquid overflow-hidden rounded-[28px]">
+            {featured.map((committee, index) => (
+              <Link
+                key={committee.slug}
+                href={`/committees/${committee.slug}`}
+                className={`group teal-hover-surface relative grid min-h-[116px] grid-cols-[36px_1fr_auto] items-center gap-4 px-4 py-5 transition-colors duration-300 sm:grid-cols-[48px_56px_minmax(160px,0.42fr)_1fr_auto] sm:px-6 ${index < featured.length - 1 ? "border-b border-oakridge-teal/10" : ""}`}
+              >
+                <span className="font-mono text-xs font-black text-oakridge-gold transition-colors duration-300 group-hover:text-oakridge-ink">
+                  {String(index + 1).padStart(2, "0")}.
+                </span>
+                <span className="hidden text-lg font-black italic tracking-wide text-oakridge-teal/40 transition-colors duration-300 group-hover:text-oakridge-ink/55 sm:block">
+                  {committee.symbol}
+                </span>
+                <div className="min-w-0">
+                  <p className="mb-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-oakridge-dark-teal transition-colors duration-300 group-hover:text-oakridge-ink/75">
+                    {committee.type}
+                  </p>
+                  <h3 className="font-sans text-xl font-black leading-none text-oakridge-warm-white transition-colors duration-300 group-hover:text-oakridge-ink sm:text-2xl">
+                    {committee.name}
+                  </h3>
+                </div>
+                <p className="hidden truncate text-sm text-oakridge-muted transition-colors duration-300 group-hover:text-oakridge-ink/72 sm:block">
+                  {committee.fullName}
+                </p>
+                <span className="text-sm font-black uppercase tracking-[0.16em] text-oakridge-teal transition-colors duration-300 group-hover:text-oakridge-ink">
+                  &rarr;
+                </span>
+              </Link>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
