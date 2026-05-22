@@ -1,13 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import { ScrollProvider } from "@/context/ScrollContext";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
@@ -16,32 +20,37 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#0A0E1A",
 };
 
 export const metadata: Metadata = {
-  title: "Oakridge Model United Nations XVI",
+  title: {
+    default: "Hack4Hyd 2.0 — Hyderabad's Premier Student Hackathon",
+    template: "%s | Hack4Hyd 2.0",
+  },
   description:
-    "Celebrating 16 years of Oakridge MUN. Join 650+ delegates across 20 committees at the premier Model United Nations conference. July 24-26, 2026.",
+    "Hack4Hyd 2.0 — Hyderabad's biggest student-led hackathon. Build innovative solutions, compete for prizes, and connect with the tech community. August 15-16, 2026.",
   keywords: [
-    "Oakridge MUN",
-    "Model United Nations",
-    "OAKRIDGE MUN XVI",
-    "MUN Conference",
-    "Diplomacy",
-    "Nord Anglia",
-    "OISG Gachibowli",
-    "Chapter XVI",
-    "MUN India",
-    "Hyderabad MUN",
+    "Hack4Hyd",
+    "Hack4Hyd 2.0",
+    "Hackathon",
+    "Hyderabad Hackathon",
+    "Student Hackathon",
+    "Coding Competition",
+    "Tech Event Hyderabad",
+    "Innovation",
+    "Programming",
   ],
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Oakridge Model United Nations XVI",
-    description: "Celebrating 16 years of Oakridge MUN. 650+ delegates, 20 committees, 3 days.",
+    title: "Hack4Hyd 2.0 — Hyderabad's Premier Student Hackathon",
+    description:
+      "Build, innovate, compete. Join Hyderabad's biggest student hackathon — August 15-16, 2026.",
     type: "website",
+    siteName: "Hack4Hyd 2.0",
   },
 };
 
@@ -51,15 +60,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col page-fade relative w-full overflow-x-hidden">
-        <ScrollProvider>
-          <Navbar />
-          <main className="flex-grow z-10 relative">
-            {children}
-          </main>
-          <Footer />
-        </ScrollProvider>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} antialiased`}>
+      <body className="min-h-screen flex flex-col bg-h4h-surface text-h4h-text overflow-x-hidden">
+        <Navbar />
+        <main className="flex-grow relative z-10">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

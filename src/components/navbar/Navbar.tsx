@@ -8,31 +8,26 @@ import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
-  { label: "Committees", href: "/committees" },
-  { label: "Secretariat", href: "/secretariat" },
-  { label: "Resources", href: "/resources" },
+  { label: "About", href: "/about" },
+  { label: "Venue", href: "/venue" },
+  { label: "Schedule", href: "/schedule" },
+  { label: "Past Event", href: "/past-event" },
+  { label: "Prizes", href: "/prizes" },
+  { label: "Rules", href: "/rules" },
+  { label: "Judging", href: "/judging" },
   { label: "Register", href: "/register" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Teams", href: "/teams" },
   { label: "Contact", href: "/contact" },
 ];
 
-const navbarVariants = {
-  hidden: { y: -30, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.3 },
-  },
-};
-
 const mobileItemVariants = {
-  closed: { y: 20, opacity: 0 },
+  closed: { y: 16, opacity: 0 },
   open: (i: number) => ({
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.15 + i * 0.06,
-      duration: 0.4,
+      delay: 0.1 + i * 0.04,
+      duration: 0.35,
       ease: [0.22, 1, 0.36, 1] as const,
     },
   }),
@@ -40,131 +35,150 @@ const mobileItemVariants = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
   const pathname = usePathname();
 
   useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const prev = document.body.style.overflow;
     if (isOpen) document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => { document.body.style.overflow = prev; };
   }, [isOpen]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      {/* ── Top nav bar ─────────────────────────────────────── */}
+      {/* ── Desktop + Mobile top bar ───────────────────────── */}
       <motion.nav
-        variants={navbarVariants}
-        initial="hidden"
-        animate="visible"
-        className="fixed left-1/2 top-[calc(env(safe-area-inset-top)+0.75rem)] z-[80] w-[calc(100%-1.25rem)] max-w-[var(--content)] -translate-x-1/2 sm:top-[calc(env(safe-area-inset-top)+1rem)] sm:w-[calc(100%-2rem)]"
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+        className="fixed left-1/2 top-[calc(env(safe-area-inset-top)+0.625rem)] z-[80] w-[calc(100%-1rem)] max-w-[1320px] -translate-x-1/2 sm:top-[calc(env(safe-area-inset-top)+0.875rem)] sm:w-[calc(100%-1.75rem)]"
       >
-        <div className="glass-liquid glass-hover flex min-h-[64px] items-center justify-between gap-2 rounded-2xl px-3 py-2.5 transition-all duration-500 sm:min-h-[72px] sm:px-5 sm:py-3 lg:px-6 xl:gap-6">
+        <div
+          className={`glass-nav flex min-h-[56px] items-center justify-between gap-2 rounded-2xl px-3 py-2 transition-all duration-500 sm:min-h-[64px] sm:px-4 sm:py-2.5 lg:px-5 ${
+            scrolled ? "shadow-lg shadow-black/30" : ""
+          }`}
+        >
           {/* Brand */}
-          <Link href="/" className="group flex min-w-0 shrink-0 items-center gap-2.5">
+          <Link href="/" className="group flex shrink-0 items-center gap-2">
             <Image
-              src="/favicon.svg"
-              alt="Oakridge MUN Crest"
-              width={32}
-              height={32}
-              className="h-10 w-10 shrink-0 drop-shadow-md sm:h-11 sm:w-11"
+              src="/logo-infinity.png"
+              alt="Hack4Hyd Logo"
+              width={36}
+              height={36}
+              className="h-8 w-8 shrink-0 rounded-xl drop-shadow-md sm:h-9 sm:w-9"
               priority
             />
-            <span className="truncate text-[clamp(0.78rem,3.8vw,1rem)] font-black uppercase tracking-[0.07em] text-oakridge-warm-white transition-colors duration-300 group-hover:text-oakridge-teal sm:tracking-[0.08em]">
-              OAKRIDGE MUN <span className="text-oakridge-teal">XVI</span>
+            <span className="text-[clamp(0.7rem,3.2vw,0.9rem)] font-extrabold uppercase tracking-[0.08em] text-h4h-text transition-colors duration-300 group-hover:text-h4h-primary">
+              HACK4HYD <span className="text-h4h-primary">2.0</span>
             </span>
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`relative px-2.5 py-2 text-[12px] font-semibold transition-colors duration-300 group ${
-                  pathname === item.href ? "text-oakridge-warm-white" : "text-oakridge-muted hover:text-oakridge-warm-white"
-                }`}
-              >
-                {item.label}
-                {pathname === item.href && (
-                  <motion.span
-                    layoutId="nav-active"
-                    className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4/5 h-[2px] bg-oakridge-teal rounded-full"
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                  />
-                )}
-                <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-oakridge-teal/50 group-hover:w-4/5 transition-all duration-300 rounded-full" />
-              </Link>
-            ))}
+          {/* Desktop links — horizontal scrollable */}
+          <div className="hidden lg:flex items-center gap-0.5 overflow-x-auto scrollbar-none">
+            {NAV_ITEMS.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative whitespace-nowrap px-2.5 py-2 text-[11.5px] font-semibold tracking-wide transition-colors duration-300 group ${
+                    isActive
+                      ? "text-h4h-text"
+                      : "text-h4h-text-muted hover:text-h4h-text"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute bottom-0 left-1/2 h-[2px] w-4/5 -translate-x-1/2 rounded-full bg-h4h-primary"
+                      style={{ boxShadow: "0 0 8px rgba(78,195,205,0.5)" }}
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-h4h-primary/40 transition-all duration-300 group-hover:w-4/5" />
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Hamburger - mobile */}
+          {/* Hamburger */}
           <button
             onClick={toggle}
-            className="group relative z-[90] flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-1.5 overflow-visible rounded-full border border-oakridge-teal/10 bg-oakridge-deep/20 lg:hidden"
-            aria-label="Toggle menu"
+            className="group relative z-[90] flex h-10 w-10 shrink-0 flex-col items-center justify-center gap-[5px] rounded-xl border border-h4h-glass-border bg-h4h-surface/40 lg:hidden"
+            aria-label="Toggle navigation"
             aria-expanded={isOpen}
           >
             <motion.span
-              animate={isOpen ? { rotate: 45, y: 4, backgroundColor: "#30cdd7" } : { rotate: 0, y: 0, backgroundColor: "#e9eff5" }}
-              transition={{ duration: 0.3 }}
-              className="w-6 h-[1.5px] origin-center"
+              animate={isOpen ? { rotate: 45, y: 4, backgroundColor: "#4EC3CD" } : { rotate: 0, y: 0, backgroundColor: "#E8EDF5" }}
+              transition={{ duration: 0.25 }}
+              className="h-[1.5px] w-5 origin-center"
             />
             <motion.span
-              animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1, backgroundColor: "#e9eff5" }}
-              transition={{ duration: 0.2 }}
-              className="w-6 h-[1.5px]"
+              animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1, backgroundColor: "#E8EDF5" }}
+              transition={{ duration: 0.15 }}
+              className="h-[1.5px] w-5"
             />
             <motion.span
-              animate={isOpen ? { rotate: -45, y: -4, backgroundColor: "#30cdd7" } : { rotate: 0, y: 0, backgroundColor: "#e9eff5" }}
-              transition={{ duration: 0.3 }}
-              className="w-6 h-[1.5px] origin-center"
+              animate={isOpen ? { rotate: -45, y: -4, backgroundColor: "#4EC3CD" } : { rotate: 0, y: 0, backgroundColor: "#E8EDF5" }}
+              transition={{ duration: 0.25 }}
+              className="h-[1.5px] w-5 origin-center"
             />
           </button>
         </div>
       </motion.nav>
 
-      {/* ── Mobile Side Panel Overlay ───────────────────────── */}
+      {/* ── Mobile drawer overlay ──────────────────────────── */}
       <AnimatePresence>
         {isOpen && (
           <div className="fixed inset-0 z-[70] lg:hidden">
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               onClick={() => setIsOpen(false)}
-              className="absolute inset-0 bg-oakridge-ink/72 backdrop-blur-md"
+              className="absolute inset-0 bg-h4h-ink/75 backdrop-blur-sm"
             />
-
-            {/* Rounded menu panel, offset below the fixed nav */}
             <motion.div
-              initial={{ opacity: 0, y: -14, clipPath: "inset(0 0 100% 0 round 24px)" }}
-              animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 24px)" }}
-              exit={{ opacity: 0, y: -10, clipPath: "inset(0 0 100% 0 round 24px)" }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="glass-liquid absolute inset-x-3 bottom-3 top-[var(--nav-safe)] flex flex-col overflow-y-auto rounded-[24px] p-6"
+              initial={{ opacity: 0, y: -10, clipPath: "inset(0 0 100% 0 round 20px)" }}
+              animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0 round 20px)" }}
+              exit={{ opacity: 0, y: -8, clipPath: "inset(0 0 100% 0 round 20px)" }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="glass-liquid absolute inset-x-2 bottom-2 top-[76px] flex flex-col overflow-y-auto rounded-2xl p-5"
             >
-              <div className="mb-8 flex items-center gap-4">
+              {/* Mobile brand */}
+              <div className="mb-6 flex items-center gap-3 border-b border-h4h-glass-border pb-5">
                 <Image
-                  src="/favicon.svg"
-                  alt="Oakridge MUN"
-                  width={64}
-                  height={64}
-                  className="h-14 w-14 shrink-0 drop-shadow-xl"
+                  src="/logo-infinity.png"
+                  alt="Hack4Hyd"
+                  width={48}
+                  height={48}
+                  className="h-11 w-11 shrink-0 rounded-2xl"
                 />
                 <div>
-                  <h3 className="text-oakridge-warm-white font-black text-xl tracking-wider uppercase leading-tight">
-                    OAKRIDGE MUN
+                  <h3 className="text-lg font-extrabold uppercase tracking-wider text-h4h-text leading-tight">
+                    Hack4Hyd
                   </h3>
-                  <p className="text-oakridge-teal font-black text-sm tracking-[0.2em] uppercase">
-                    Chapter XVI
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-h4h-primary">
+                    Season 2.0
                   </p>
                 </div>
               </div>
 
-              <nav className="flex flex-col gap-4">
+              {/* Links */}
+              <nav className="flex flex-col gap-1">
                 {NAV_ITEMS.map((item, i) => (
                   <motion.div
                     key={item.label}
@@ -177,31 +191,31 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`group flex items-center gap-4 text-lg font-bold tracking-wide transition-all duration-300 ${
+                      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-semibold tracking-wide transition-all duration-300 ${
                         pathname === item.href
-                          ? "text-oakridge-teal"
-                          : "text-oakridge-warm-white hover:text-oakridge-teal"
+                          ? "bg-h4h-primary/10 text-h4h-primary"
+                          : "text-h4h-text hover:bg-h4h-surface-light hover:text-h4h-primary"
                       }`}
                     >
-                      <span className={`w-1.5 h-1.5 rounded-full bg-oakridge-teal transition-all duration-300 ${
-                        pathname === item.href ? "opacity-100 scale-100" : "opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100"
-                      }`} />
+                      <span
+                        className={`h-1.5 w-1.5 shrink-0 rounded-full transition-all duration-300 ${
+                          pathname === item.href
+                            ? "bg-h4h-primary scale-100"
+                            : "bg-h4h-text-muted scale-75 opacity-40"
+                        }`}
+                      />
                       {item.label}
                     </Link>
                   </motion.div>
                 ))}
               </nav>
 
-              <div className="mt-10">
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-oakridge-muted mb-4">
-                  Conference Dates
-                </p>
-                <div className="rounded-xl border border-oakridge-teal/20 bg-oakridge-paper/50 p-4">
-                  <p className="text-oakridge-warm-white font-bold text-sm">
-                    July 24-26, 2026
-                  </p>
-                  <p className="text-oakridge-teal text-[11px] font-black uppercase tracking-wider mt-1">
-                    OISG, Gachibowli
+              {/* Event date pill */}
+              <div className="mt-auto pt-5">
+                <div className="rounded-xl border border-h4h-primary/15 bg-h4h-surface-light/50 p-4">
+                  <p className="text-sm font-bold text-h4h-text">August 15–16, 2026</p>
+                  <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-h4h-primary">
+                    Hyderabad
                   </p>
                 </div>
               </div>

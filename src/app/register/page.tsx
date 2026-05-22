@@ -1,63 +1,81 @@
-import React from "react";
-import BackgroundGrid from "@/components/ui/BackgroundGrid";
-import Button from "@/components/ui/Button";
+import { PageTransition } from "@/components/ui/PageTransition";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { GlassCard } from "@/components/ui/GlassCard";
+import { CalendarDays, Clock, Users, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Register | Oakridge MUN",
-  description: "Register for the upcoming Oakridge Model United Nations conference.",
+  title: "Register | Hack4Hyd 2.0",
+  description: "Register for Hack4Hyd 2.0 hackathon. Secure your spot, form a team, and build the future.",
 };
 
 export default function RegisterPage() {
   return (
-    <div className="site-section page-safe min-h-screen pb-20 sm:pb-24">
-      <BackgroundGrid />
+    <PageTransition>
+      <section className="min-h-screen pt-28 pb-20 relative">
+        <div className="particle-bg" />
+        <div className="section-container relative z-10">
+          <SectionHeader 
+            title="Register for Hack4Hyd" 
+            kicker="Join the Movement" 
+            description="Secure your spot in the most exciting hackathon of the year. Build, learn, and win amazing prizes."
+            gradient 
+          />
 
-      <div className="relative z-10 mx-auto max-w-[var(--content)] px-4 sm:px-6">
-        <div className="mb-14 text-center">
-          <p className="section-kicker">Chapter XVI</p>
-          <h1 className="display-title">Delegate registration.</h1>
-          <p className="body-large mx-auto mt-6 max-w-2xl">
-            Secure your place at the premier Model United Nations conference.
-          </p>
-        </div>
-
-        <div className="thin-panel mx-auto grid max-w-[var(--content-narrow)] gap-6 p-5 text-center sm:p-7 md:grid-cols-[1fr_1.2fr] md:p-10 md:text-left">
-          <div className="grid min-h-[240px] place-content-center rounded-[24px] bg-oakridge-navy p-6 text-oakridge-warm-white sm:min-h-[280px] sm:p-8">
-            <span className="font-sans text-7xl font-black leading-none text-oakridge-teal">650+</span>
-            <span className="mt-4 text-xs font-black uppercase tracking-[0.25em] text-oakridge-light-teal">
-              Delegate seats
-            </span>
-          </div>
-          <div className="self-center">
-            <p className="section-kicker">Opening Soon</p>
-            <h2 className="font-sans text-2xl font-black tracking-[-0.05em] text-oakridge-warm-white sm:text-4xl md:text-6xl">
-              Registration portal is being finalized.
-            </h2>
-            <p className="mt-5 leading-relaxed text-oakridge-muted">
-              Please check back shortly or follow our official channels for the exact launch date.
-            </p>
-            <div className="mt-7 grid grid-cols-3 overflow-hidden rounded-[20px] border border-oakridge-teal/15">
-              {[
-                ["20", "Committees"],
-                ["3", "Days"],
-                ["XVI", "Chapter"],
-              ].map(([value, label]) => (
-                <div key={label} className="border-r border-oakridge-teal/10 p-4 text-center last:border-r-0">
-                  <strong className="block font-sans text-2xl font-black text-oakridge-warm-white">{value}</strong>
-                  <span className="text-[10px] font-black uppercase tracking-[0.18em] text-oakridge-muted">
-                    {label}
-                  </span>
+          <div className="grid md:grid-cols-2 gap-10 mt-16 max-w-5xl mx-auto">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-h4h-text mb-6">Key Dates & Deadlines</h3>
+              <GlassCard className="p-6 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-h4h-primary/20 flex items-center justify-center shrink-0">
+                  <CalendarDays className="w-6 h-6 text-h4h-primary" />
                 </div>
-              ))}
+                <div>
+                  <h4 className="text-xl font-semibold text-white">Registration Opens</h4>
+                  <p className="text-h4h-text-muted mt-1">May 25, 2026 &bull; 12:00 PM IST</p>
+                </div>
+              </GlassCard>
+              
+              <GlassCard className="p-6 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-h4h-accent/20 flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6 text-h4h-accent" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white">Registration Closes</h4>
+                  <p className="text-h4h-text-muted mt-1">June 10, 2026 &bull; 11:59 PM IST</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard className="p-6 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-h4h-gold/20 flex items-center justify-center shrink-0">
+                  <Users className="w-6 h-6 text-h4h-gold" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white">Hackathon Dates</h4>
+                  <p className="text-h4h-text-muted mt-1">June 15-16, 2026 &bull; 48 Hours</p>
+                </div>
+              </GlassCard>
             </div>
-            <div className="mt-7">
-              <Button variant="gold" href="#">
-                Get Notified
-              </Button>
+
+            <div className="h-full flex flex-col justify-center">
+              <GlassCard className="p-8 text-center" gold>
+                <h3 className="text-3xl font-bold text-white mb-4">Ready to Hack?</h3>
+                <p className="text-h4h-text-muted mb-8">
+                  Form a team of 2-4 members, bring your innovative ideas, and let&apos;s solve real-world problems.
+                </p>
+                
+                {/* Placeholder for Embedded Form */}
+                <div className="bg-h4h-surface-light border border-h4h-glass-border rounded-xl p-12 mb-8 border-dashed flex flex-col items-center justify-center">
+                  <p className="text-h4h-text-muted italic mb-2">Registration Form Placeholder</p>
+                  <p className="text-sm text-h4h-text-muted/60">Embed your Typeform, Google Form, or Devfolio widget here.</p>
+                </div>
+
+                <button className="w-full py-4 px-8 rounded-full bg-gradient-to-r from-h4h-primary to-h4h-accent text-white font-semibold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity glow-teal">
+                  Register Now <ArrowRight className="w-5 h-5" />
+                </button>
+              </GlassCard>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </PageTransition>
   );
 }
