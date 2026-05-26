@@ -105,7 +105,7 @@ export function TeamCard({ member, gold = false }: TeamCardProps) {
                     className="text-h4h-text-muted leading-relaxed"
                   >
                     <p>
-                      Coming soon! Stay tuned to learn more about {member.name}&apos;s journey, expertise, and contribution to making Hack4Hyd a massive success.
+                      {member.bio || `Coming soon! Stay tuned to learn more about ${member.name}'s journey, expertise, and contribution to making Hack4Hyd a massive success.`}
                     </p>
                   </motion.div>
                 </GlassCard>
