@@ -67,7 +67,7 @@ export default function TeamsPage() {
                   <Handshake className="w-6 h-6 text-h4h-primary shrink-0" />
                   <div>
                     <h4 className="text-white font-medium">Team Building Session</h4>
-                    <p className="text-sm text-h4h-text-muted">Join us on Day 1 for an icebreaker session</p>
+                    <p className="text-sm text-h4h-text-muted">Join our kickoff session to meet other participants</p>
                   </div>
                 </div>
               </div>

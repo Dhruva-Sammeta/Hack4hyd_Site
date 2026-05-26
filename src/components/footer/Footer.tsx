@@ -53,7 +53,7 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               <span className="inline-flex items-center rounded-full border border-h4h-primary/20 bg-h4h-surface-light px-3.5 py-1 text-xs font-bold text-h4h-primary">
-                Aug 15–16, 2026
+                August 1, 2026
               </span>
               <span className="inline-flex items-center rounded-full border border-h4h-glass-border bg-h4h-surface-light px-3.5 py-1 text-xs font-bold text-h4h-text-muted">
                 Hyderabad

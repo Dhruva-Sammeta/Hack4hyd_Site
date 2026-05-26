@@ -23,14 +23,15 @@ export default function RegisterPage() {
 
           <div className="grid md:grid-cols-2 gap-10 mt-16 max-w-5xl mx-auto">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-h4h-text mb-6">Key Dates & Deadlines</h3>
+              <h3 className="text-2xl font-bold text-h4h-text mb-6">Key Dates & Timeline</h3>
+              
               <GlassCard className="p-6 flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-h4h-primary/20 flex items-center justify-center shrink-0">
                   <CalendarDays className="w-6 h-6 text-h4h-primary" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-white">Registration Opens</h4>
-                  <p className="text-h4h-text-muted mt-1">May 25, 2026 &bull; 12:00 PM IST</p>
+                  <h4 className="text-xl font-semibold text-white">Registration Window</h4>
+                  <p className="text-h4h-text-muted mt-1">May 25 – July 20, 2026</p>
                 </div>
               </GlassCard>
               
@@ -39,18 +40,28 @@ export default function RegisterPage() {
                   <Clock className="w-6 h-6 text-h4h-accent" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-white">Registration Closes</h4>
-                  <p className="text-h4h-text-muted mt-1">June 10, 2026 &bull; 11:59 PM IST</p>
+                  <h4 className="text-xl font-semibold text-white">Problem Statement & Kickoff</h4>
+                  <p className="text-h4h-text-muted mt-1">July 25, 2026 &bull; 10:00 AM IST (Online)</p>
                 </div>
               </GlassCard>
 
               <GlassCard className="p-6 flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-h4h-gold/20 flex items-center justify-center shrink-0">
-                  <Users className="w-6 h-6 text-h4h-gold" />
+                  <CalendarDays className="w-6 h-6 text-h4h-gold" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-white">Hackathon Dates</h4>
-                  <p className="text-h4h-text-muted mt-1">June 15-16, 2026 &bull; 48 Hours</p>
+                  <h4 className="text-xl font-semibold text-white">Online Submissions Close</h4>
+                  <p className="text-h4h-text-muted mt-1">July 31, 2026 &bull; 11:59 PM IST</p>
+                </div>
+              </GlassCard>
+
+              <GlassCard className="p-6 flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-h4h-primary/20 flex items-center justify-center shrink-0">
+                  <Users className="w-6 h-6 text-h4h-primary" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-white">Grand Finale (Physical)</h4>
+                  <p className="text-h4h-text-muted mt-1">August 1, 2026 &bull; 09:30 AM - 03:30 PM</p>
                 </div>
               </GlassCard>
             </div>

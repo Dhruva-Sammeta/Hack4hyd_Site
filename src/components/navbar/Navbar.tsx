@@ -213,7 +213,7 @@ export default function Navbar() {
               {/* Event date pill */}
               <div className="mt-auto pt-5">
                 <div className="rounded-xl border border-h4h-primary/15 bg-h4h-surface-light/50 p-4">
-                  <p className="text-sm font-bold text-h4h-text">August 15–16, 2026</p>
+                  <p className="text-sm font-bold text-h4h-text">August 1, 2026</p>
                   <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-h4h-primary">
                     Hyderabad
                   </p>

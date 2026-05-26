@@ -6,7 +6,7 @@ import { Clock, Code, Users, Coffee, Trophy, Mic } from "lucide-react";
 
 export const metadata = {
   title: "Schedule | Hack4Hyd 2.0",
-  description: "The official 48-hour schedule for Hack4Hyd 2.0.",
+  description: "The official timeline and schedule for Hack4Hyd 2.0.",
 };
 
 const getEventIcon = (type: string) => {
@@ -51,8 +51,8 @@ export default function SchedulePage() {
         <div className="section-container relative z-10">
           <SectionHeader
             title="Event Schedule"
-            kicker="48 Hours of Innovation"
-            description="A packed weekend of building, learning, networking, and fun. Plan your hackathon experience."
+            kicker="Timeline & Schedule"
+            description="From the online problem statement launch to pre-event submissions and the grand physical finale."
             gradient
           />
 

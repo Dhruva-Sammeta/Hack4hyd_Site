@@ -72,7 +72,7 @@ export default function PastEventPage() {
               <div className="rounded-xl overflow-hidden glass relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-h4h-surface-light to-h4h-surface flex flex-col items-center justify-center text-h4h-text-muted border border-h4h-glass-border">
                   <span className="text-3xl mb-2 opacity-50">💻</span>
-                  <span className="font-medium tracking-wide">Midnight Coding</span>
+                  <span className="font-medium tracking-wide">Team Coding</span>
                 </div>
                 <div className="absolute inset-0 bg-h4h-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>

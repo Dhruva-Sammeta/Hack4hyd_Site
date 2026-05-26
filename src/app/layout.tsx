@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Hack4Hyd 2.0",
   },
   description:
-    "Hack4Hyd 2.0 — Hyderabad's biggest student-led hackathon. Build innovative solutions, compete for prizes, and connect with the tech community. August 15-16, 2026.",
+    "Hack4Hyd 2.0 — Hyderabad's biggest student-led hackathon. Build innovative solutions, compete for prizes, and connect with the tech community. August 1, 2026.",
   keywords: [
     "Hack4Hyd",
     "Hack4Hyd 2.0",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hack4Hyd 2.0 — Hyderabad's Premier Student Hackathon",
     description:
-      "Build, innovate, compete. Join Hyderabad's biggest student hackathon — August 15-16, 2026.",
+      "Build, innovate, compete. Join Hyderabad's biggest student hackathon — August 1, 2026.",
     type: "website",
     siteName: "Hack4Hyd 2.0",
   },

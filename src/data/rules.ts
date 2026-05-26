@@ -17,11 +17,11 @@ export const rules: Rule[] = [
   {
     title: "Project Requirements",
     items: [
-      "All code must be written during the hackathon — no pre-built projects",
+      "All code must be written during the hacking period (from problem statement release to the submission deadline) — no pre-built projects",
       "Open-source libraries and frameworks are allowed",
-      "Projects must be original work created during the event",
-      "Pre-existing ideas are fine, but implementation must start fresh",
-      "All projects must be submitted before the code freeze deadline",
+      "Projects must be original work created during the designated hacking week",
+      "Pre-existing ideas are fine, but implementation must start fresh after the problem statement release",
+      "All projects must be submitted online before the submission deadline",
     ],
   },
   {

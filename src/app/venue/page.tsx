@@ -17,7 +17,7 @@ export default function VenuePage() {
           <SectionHeader
             title="The Venue"
             kicker="Where It Happens"
-            description="Join us in the heart of Hyderabad for 48 hours of innovation, collaboration, and building the future."
+            description="Join us in the heart of Hyderabad for the presentation, judging, and awards ceremony of Hack4Hyd 2.0."
             gradient
           />
           
@@ -31,10 +31,10 @@ export default function VenuePage() {
               
               <div className="space-y-4 text-h4h-text-muted mt-auto z-10">
                 <p>
-                  We're securing a world-class venue in Hyderabad that provides the perfect environment for a 48-hour hackathon.
+                  We're securing a world-class venue in Hyderabad that provides the perfect environment for our physical event.
                 </p>
                 <p>
-                  Expect high-speed Wi-Fi, comfortable working spaces, sleeping areas, and plenty of power outlets for everyone.
+                  Expect high-speed Wi-Fi, presentation screens, comfortable networking spaces, and refreshments.
                 </p>
                 <div className="mt-6 p-4 rounded-lg bg-h4h-surface-light border border-h4h-glass-border">
                   <p className="text-sm font-medium text-h4h-text">Full address will be announced to accepted participants.</p>
