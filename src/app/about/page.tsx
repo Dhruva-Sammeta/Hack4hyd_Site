@@ -5,6 +5,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { coreTeam, legacyTeam } from "@/data/team";
 import { Users, Star } from "lucide-react";
+import { TeamCard } from "@/components/ui/TeamCard";
 
 export const metadata: Metadata = {
   title: "About Us | Hack4Hyd",
@@ -39,27 +40,7 @@ export default function AboutUs() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {coreTeam.map((member) => (
-                <GlassCard key={member.name} className="team-card flex flex-col items-center">
-                  <div className="team-avatar relative overflow-hidden flex items-center justify-center">
-                    {member.image ? (
-                      <Image 
-                        src={member.image} 
-                        alt={`${member.name}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 150px, 150px"
-                      />
-                    ) : (
-                      member.initials
-                    )}
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-h4h-text mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-h4h-text-muted font-medium">
-                    {member.role}
-                  </p>
-                </GlassCard>
+                <TeamCard key={member.name} member={member} />
               ))}
             </div>
           </section>
@@ -73,27 +54,7 @@ export default function AboutUs() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {legacyTeam.map((member) => (
-                <GlassCard key={member.name} gold className="team-card legacy-card flex flex-col items-center">
-                  <div className="team-avatar relative overflow-hidden flex items-center justify-center">
-                    {member.image ? (
-                      <Image 
-                        src={member.image} 
-                        alt={`${member.name}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 150px, 150px"
-                      />
-                    ) : (
-                      member.initials
-                    )}
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-h4h-text mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-h4h-text-muted font-medium">
-                    {member.role}
-                  </p>
-                </GlassCard>
+                <TeamCard key={member.name} member={member} gold />
               ))}
             </div>
           </section>
