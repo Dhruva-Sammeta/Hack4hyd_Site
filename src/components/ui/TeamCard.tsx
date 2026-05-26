@@ -66,9 +66,9 @@ export function TeamCard({ member, gold = false }: TeamCardProps) {
             <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none">
               <motion.div
                 layoutId={`card-${member.name}`}
-                className="w-full max-w-lg pointer-events-auto h-fit"
+                className="w-full max-w-lg pointer-events-auto"
               >
-                <GlassCard gold={gold} className="relative p-8 md:p-12 flex flex-col items-center text-center shadow-2xl bg-h4h-surface/90 h-fit max-h-[85vh] overflow-y-auto">
+                <GlassCard gold={gold} className="relative p-8 md:p-12 flex flex-col items-center text-center shadow-2xl bg-h4h-surface/90">
                   {/* Close Button */}
                   <button
                     onClick={() => setIsExpanded(false)}
