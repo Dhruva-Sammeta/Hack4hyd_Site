@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { TeamMember } from "@/data/team";
@@ -51,23 +52,23 @@ export function TeamCard({ member, gold = false }: TeamCardProps) {
       {/* Expanded Modal State */}
       <AnimatePresence>
         {isExpanded && (
-          <>
+          <Portal>
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsExpanded(false)}
-              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md"
+              className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-md"
             />
             
             {/* Modal Content */}
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none">
               <motion.div
                 layoutId={`card-${member.name}`}
                 className="w-full max-w-lg pointer-events-auto"
               >
-                <GlassCard gold={gold} className="relative p-8 md:p-12 flex flex-col items-center text-center shadow-2xl">
+                <GlassCard gold={gold} className="relative p-8 md:p-12 flex flex-col items-center text-center shadow-2xl bg-h4h-surface/90">
                   {/* Close Button */}
                   <button
                     onClick={() => setIsExpanded(false)}
@@ -111,9 +112,20 @@ export function TeamCard({ member, gold = false }: TeamCardProps) {
                 </GlassCard>
               </motion.div>
             </div>
-          </>
+          </Portal>
         )}
       </AnimatePresence>
     </>
   );
+}
+
+// Client-side Portal Helper
+function Portal({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  return createPortal(children, document.body);
 }
