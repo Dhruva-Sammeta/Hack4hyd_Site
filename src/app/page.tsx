@@ -5,8 +5,8 @@ import { PageTransition } from "@/components/ui/PageTransition";
 import { CountdownTimer } from "@/components/ui/CountdownTimer";
 
 export const metadata: Metadata = {
-  title: "Home | Hack4Hyd 2.0",
-  description: "Join Hack4Hyd 2.0, the premier hackathon for future innovators.",
+  title: "Home | Hack4Hyd",
+  description: "Join Hack4Hyd, the premier hackathon for future innovators.",
 };
 
 export default function Home() {
@@ -28,13 +28,13 @@ export default function Home() {
             
             <Image 
               src="/logo-infinity-text.png" 
-              alt="Hack4Hyd 2.0 Logo" 
+              alt="Hack4Hyd Logo" 
               width={500} 
               height={500} 
               className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-md mx-auto rounded-[2rem] shadow-[0_0_50px_rgba(78,195,205,0.25)] drop-shadow-2xl" 
               priority
             />
-            <h1 className="sr-only">Hack4Hyd 2.0</h1>
+            <h1 className="sr-only">Hack4Hyd</h1>
 
             <p className="body-large max-w-2xl mx-auto pt-4">
               Build, innovate, and conquer at the most anticipated coding event of the year. 

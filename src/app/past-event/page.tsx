@@ -4,7 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Users, Code, Zap, Globe } from "lucide-react";
 
 export const metadata = {
-  title: "Past Event | Hack4Hyd 2.0",
+  title: "Past Event | Hack4Hyd",
   description: "A look back at the incredible innovations and projects from Hack4Hyd 1.0.",
 };
 

@@ -4,8 +4,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { CalendarDays, Clock, Users, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Register | Hack4Hyd 2.0",
-  description: "Register for Hack4Hyd 2.0 hackathon. Secure your spot, form a team, and build the future.",
+  title: "Register | Hack4Hyd",
+  description: "Register for Hack4Hyd hackathon. Secure your spot, form a team, and build the future.",
 };
 
 export default function RegisterPage() {

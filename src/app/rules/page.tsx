@@ -5,8 +5,8 @@ import { rules } from "@/data/rules";
 import { FileText, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Rules | Hack4Hyd 2.0",
-  description: "Official rules and guidelines for the Hack4Hyd 2.0 hackathon.",
+  title: "Rules | Hack4Hyd",
+  description: "Official rules and guidelines for the Hack4Hyd hackathon.",
 };
 
 export default function RulesPage() {
@@ -18,7 +18,7 @@ export default function RulesPage() {
           <SectionHeader
             kicker="Guidelines"
             title="Official Rules"
-            description="Please read these rules carefully. By participating in Hack4Hyd 2.0, you agree to abide by all of the following guidelines."
+            description="Please read these rules carefully. By participating in Hack4Hyd, you agree to abide by all of the following guidelines."
             gradient
           />
           

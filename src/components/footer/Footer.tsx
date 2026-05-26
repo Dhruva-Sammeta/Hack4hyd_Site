@@ -15,7 +15,7 @@ const footerLinks = [
     heading: "Participate",
     links: [
       { label: "Register", href: "/register" },
-      { label: "Teams", href: "/teams" },
+      { label: "Themes", href: "/themes" },
       { label: "Rules", href: "/rules" },
       { label: "Judging Criteria", href: "/judging" },
     ],
@@ -45,7 +45,7 @@ export default function Footer() {
                 className="h-10 w-10 rounded-xl drop-shadow-md"
               />
               <span className="text-base font-extrabold uppercase tracking-wider text-h4h-text">
-                Hack4Hyd <span className="text-h4h-primary">2.0</span>
+                Hack4Hyd 
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-h4h-text-muted">

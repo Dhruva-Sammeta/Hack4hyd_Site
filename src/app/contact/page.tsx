@@ -4,8 +4,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Mail, MapPin, Hash, Globe, MessageCircle, Send } from "lucide-react";
 
 export const metadata = {
-  title: "Contact Us | Hack4Hyd 2.0",
-  description: "Get in touch with the Hack4Hyd 2.0 team for any queries or sponsorships.",
+  title: "Contact Us | Hack4Hyd",
+  description: "Get in touch with the Hack4Hyd team for any queries or sponsorships.",
 };
 
 export default function ContactPage() {

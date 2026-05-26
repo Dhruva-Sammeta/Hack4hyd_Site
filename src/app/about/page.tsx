@@ -7,8 +7,8 @@ import { coreTeam, legacyTeam } from "@/data/team";
 import { Users, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Hack4Hyd 2.0",
-  description: "Meet the brilliant minds and legacy members behind Hack4Hyd 2.0.",
+  title: "About Us | Hack4Hyd",
+  description: "Meet the brilliant minds and legacy members behind Hack4Hyd.",
 };
 
 export default function AboutUs() {
@@ -26,7 +26,7 @@ export default function AboutUs() {
           <SectionHeader
             kicker="Who We Are"
             title="Meet the Team"
-            description="The passionate individuals working tirelessly behind the scenes to make Hack4Hyd 2.0 an unforgettable experience."
+            description="The passionate individuals working tirelessly behind the scenes to make Hack4Hyd Edition 2 an unforgettable experience."
             gradient
           />
 

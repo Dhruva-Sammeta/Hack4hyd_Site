@@ -5,8 +5,8 @@ import { scheduleData } from "@/data/schedule";
 import { Clock, Code, Users, Coffee, Trophy, Mic } from "lucide-react";
 
 export const metadata = {
-  title: "Schedule | Hack4Hyd 2.0",
-  description: "The official timeline and schedule for Hack4Hyd 2.0.",
+  title: "Schedule | Hack4Hyd",
+  description: "The official timeline and schedule for Hack4Hyd.",
 };
 
 const getEventIcon = (type: string) => {

@@ -4,8 +4,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { MapPin, Navigation, Bus, Train, Car } from "lucide-react";
 
 export const metadata = {
-  title: "Venue | Hack4Hyd 2.0",
-  description: "Information about the Hack4Hyd 2.0 hackathon venue in Hyderabad.",
+  title: "Venue | Hack4Hyd",
+  description: "Information about the Hack4Hyd hackathon venue in Hyderabad.",
 };
 
 export default function VenuePage() {
@@ -17,7 +17,7 @@ export default function VenuePage() {
           <SectionHeader
             title="The Venue"
             kicker="Where It Happens"
-            description="Join us in the heart of Hyderabad for the presentation, judging, and awards ceremony of Hack4Hyd 2.0."
+            description="Join us in the heart of Hyderabad for the presentation, judging, and awards ceremony of Hack4Hyd."
             gradient
           />
           

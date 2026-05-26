@@ -4,8 +4,8 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { prizes } from "@/data/prizes";
 
 export const metadata = {
-  title: "Prizes | Hack4Hyd 2.0",
-  description: "Checkout the amazing prizes for Hack4Hyd 2.0 winners.",
+  title: "Prizes | Hack4Hyd",
+  description: "Checkout the amazing prizes for Hack4Hyd winners.",
 };
 
 export default function PrizesPage() {

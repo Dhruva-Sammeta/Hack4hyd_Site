@@ -16,7 +16,7 @@ const NAV_ITEMS = [
   { label: "Rules", href: "/rules" },
   { label: "Judging", href: "/judging" },
   { label: "Register", href: "/register" },
-  { label: "Teams", href: "/teams" },
+  { label: "Themes", href: "/themes" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -80,7 +80,7 @@ export default function Navbar() {
               priority
             />
             <span className="text-[clamp(0.7rem,3.2vw,0.9rem)] font-extrabold uppercase tracking-[0.08em] text-h4h-text transition-colors duration-300 group-hover:text-h4h-primary">
-              HACK4HYD <span className="text-h4h-primary">2.0</span>
+              HACK4HYD 
             </span>
           </Link>
 
