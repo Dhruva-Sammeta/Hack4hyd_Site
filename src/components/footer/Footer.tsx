@@ -124,7 +124,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Hack4Hyd. All rights reserved.
           </p>
           <p className="text-xs text-h4h-text-muted/50">
-            A <a href="https://bbb-inititiative.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-h4h-primary/60 hover:text-h4h-primary transition-colors">Byte By Byte</a> Initiative · Built with 💙 by the Hack4Hyd Team
+            Presented by <a href="https://bbb-inititiative.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-h4h-primary/60 hover:text-h4h-primary transition-colors">Byte By Byte</a> · Built with 💙 by the Hack4Hyd Team
           </p>
         </div>
       </div>

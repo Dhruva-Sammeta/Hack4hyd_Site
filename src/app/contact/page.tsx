@@ -72,7 +72,7 @@ export default function ContactPage() {
               </GlassCard>
             </div>
 
-            {/* Contact Form Placeholder */}
+            {/* Contact Form */}
             <div className="md:col-span-3">
               <GlassCard className="p-8 h-full">
                 <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
@@ -83,7 +83,6 @@ export default function ContactPage() {
                       <label className="text-sm font-medium text-h4h-text-muted">First Name</label>
                       <input 
                         type="text" 
-                        placeholder="John" 
                         className="w-full bg-h4h-surface-light border border-h4h-glass-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-h4h-primary transition-colors"
                       />
                     </div>
@@ -91,7 +90,6 @@ export default function ContactPage() {
                       <label className="text-sm font-medium text-h4h-text-muted">Last Name</label>
                       <input 
                         type="text" 
-                        placeholder="Doe" 
                         className="w-full bg-h4h-surface-light border border-h4h-glass-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-h4h-primary transition-colors"
                       />
                     </div>
@@ -101,7 +99,6 @@ export default function ContactPage() {
                     <label className="text-sm font-medium text-h4h-text-muted">Email Address</label>
                     <input 
                       type="email" 
-                      placeholder="john@example.com" 
                       className="w-full bg-h4h-surface-light border border-h4h-glass-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-h4h-primary transition-colors"
                     />
                   </div>
@@ -109,7 +106,6 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-h4h-text-muted">Message</label>
                     <textarea 
-                      placeholder="How can we help you?" 
                       rows={5}
                       className="w-full bg-h4h-surface-light border border-h4h-glass-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-h4h-primary transition-colors resize-none"
                     ></textarea>

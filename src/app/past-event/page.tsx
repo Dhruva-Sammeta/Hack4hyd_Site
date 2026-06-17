@@ -51,7 +51,7 @@ export default function PastEventPage() {
               centered
             />
             
-            {/* Photo Gallery Placeholder Grid */}
+            {/* Photo Gallery Grid */}
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px]">
               <div className="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden glass relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-h4h-surface-light to-h4h-surface flex flex-col items-center justify-center text-h4h-text-muted border border-h4h-glass-border">

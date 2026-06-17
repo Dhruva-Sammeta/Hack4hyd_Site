@@ -6,7 +6,7 @@ import { CountdownTimer } from "@/components/ui/CountdownTimer";
 
 export const metadata: Metadata = {
   title: "Home | Hack4Hyd",
-  description: "Join Hack4Hyd, the premier hackathon for future innovators. A Byte By Byte Initiative.",
+  description: "Join Hack4Hyd, the premier hackathon for future innovators. Byte By Byte Presents.",
 };
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
               className="h-6 w-6 rounded-md"
             />
             <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-h4h-text-muted group-hover:text-h4h-primary transition-colors">
-              A Byte By Byte Initiative
+              Byte By Byte Presents
             </span>
           </a>
 

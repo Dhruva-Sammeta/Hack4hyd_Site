@@ -40,13 +40,6 @@ export const coreTeam: TeamMember[] = [
     image: "/team/saanvi.jpeg",
     bio: "Saanvi Reddy Thummala is an IBDP student with a strong interest in finance, AI, innovation, and creativity. She enjoys being part of projects where she can collaborate with others, contribute ideas, and learn through new experiences. Alongside her interest in finance and emerging technologies, she enjoys creative outlets such as crocheting and theatre, bringing both analytical and creative thinking to her work. As part of the core team, Saanvi is excited to work with passionate and like-minded individuals while helping make Hack4Hyd a successful and impactful event."
   },
-  {
-    name: "Dhruva",
-    role: "Head of Technology",
-    initials: "DH",
-    image: "/team/dhruva.jpg",
-    bio: "Dhruva Sammeta is an IBDP student with a strong passion for technology, engineering, software development, and innovation. With a deep interest in hardware systems, robotics, computational problem-solving, and full-stack application development, he enjoys building projects that combine technical design with real-world application. From developing engineering concepts and experimenting with emerging technologies to creating software solutions and leading technical initiatives, Dhruva is driven by curiosity, implementation, and the challenge of turning ambitious ideas into functional systems."
-  },
 ];
 
 export const legacyTeam: TeamMember[] = [

@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Hack4Hyd — Hyderabad's Premier Student Hackathon | A Byte By Byte Initiative",
+    default: "Hack4Hyd — Hyderabad's Premier Student Hackathon | Byte By Byte Presents",
     template: "%s | Hack4Hyd",
   },
   description:
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Hack4Hyd — Hyderabad's Premier Student Hackathon | A Byte By Byte Initiative",
+    title: "Hack4Hyd — Hyderabad's Premier Student Hackathon | Byte By Byte Presents",
     description:
       "Build, innovate, compete. Join Hyderabad's biggest student hackathon — supported by Byte By Byte. August 1, 2026.",
     type: "website",
