@@ -73,11 +73,7 @@ export default function RegisterPage() {
                   Form a team of 2-4 members, bring your innovative ideas, and let&apos;s solve real-world problems.
                 </p>
                 
-                {/* Placeholder for Embedded Form */}
-                <div className="bg-h4h-surface-light border border-h4h-glass-border rounded-xl p-12 mb-8 border-dashed flex flex-col items-center justify-center">
-                  <p className="text-h4h-text-muted italic mb-2">Registration Form Placeholder</p>
-                  <p className="text-sm text-h4h-text-muted/60">Embed your Typeform, Google Form, or Devfolio widget here.</p>
-                </div>
+
 
                 <button className="w-full py-4 px-8 rounded-full bg-gradient-to-r from-h4h-primary to-h4h-accent text-white font-semibold text-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity glow-teal">
                   Register Now <ArrowRight className="w-5 h-5" />

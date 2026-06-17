@@ -56,6 +56,10 @@ export default function SchedulePage() {
             gradient
           />
 
+          <div className="bg-h4h-gold/10 border border-h4h-gold/30 rounded-xl p-4 mb-12 text-center max-w-3xl mx-auto shadow-[0_0_20px_rgba(236,188,76,0.1)]">
+            <p className="text-h4h-gold font-semibold">Note: This schedule is tentative and for reference only. The final schedule is TBD.</p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {scheduleData.map((day) => (
               <div key={day.day} className="flex flex-col">
