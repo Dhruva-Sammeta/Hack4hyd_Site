@@ -9,23 +9,22 @@ export const metadata = {
 };
 
 export default function PrizesPage() {
-  const mainPrizes = prizes.filter(p => p.tier < 4);
-  const specialPrizes = prizes.filter(p => p.tier === 4);
-
   return (
     <PageTransition>
       <section className="min-h-screen pt-28 pb-20 relative">
         <div className="particle-bg" />
+        <div className="grid-bg" />
+        <div className="noise-overlay" />
         <div className="section-container relative z-10">
           <SectionHeader 
             kicker="Rewards" 
             title="Prizes & Perks" 
-            description="Compete for your share of the prize pool and exclusive opportunities."
+            description="Compete for your share of the ₹35,000 prize pool."
             gradient 
           />
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {mainPrizes.map((prize, i) => (
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {prizes.map((prize, i) => (
               <GlassCard 
                 key={i} 
                 className={`relative flex flex-col items-center text-center p-8 ${prize.tier === 1 ? 'md:-mt-8 border-h4h-gold/30' : ''}`}
@@ -53,31 +52,13 @@ export default function PrizesPage() {
             ))}
           </div>
 
-          <div className="mt-24">
-            <SectionHeader 
-              title="Special Categories" 
-              description="More ways to win with specialized awards"
-              centered 
-            />
-            
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {specialPrizes.map((prize, i) => (
-                <GlassCard key={i} className="p-6 flex flex-col items-start hover:border-h4h-accent/30 transition-colors">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-h4h-accent/20 flex items-center justify-center text-2xl border border-h4h-accent/30">
-                      {prize.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">{prize.title}</h4>
-                      <div className="text-h4h-primary font-semibold">{prize.amount}</div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-h4h-text-muted">
-                    {prize.description}
-                  </p>
-                </GlassCard>
-              ))}
-            </div>
+          {/* Total Prize Pool */}
+          <div className="mt-20 text-center">
+            <GlassCard className="p-8 inline-block max-w-lg mx-auto">
+              <p className="text-sm font-bold uppercase tracking-[0.15em] text-h4h-primary mb-2">Total Prize Pool</p>
+              <p className="text-5xl font-black gradient-text">₹35,000</p>
+              <p className="text-h4h-text-muted mt-3 text-sm">Plus certificates and exclusive perks for all participants</p>
+            </GlassCard>
           </div>
         </div>
       </section>

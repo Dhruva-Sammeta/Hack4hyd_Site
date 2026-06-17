@@ -83,6 +83,10 @@ export default function Navbar() {
               HACK4HYD 
             </span>
           </Link>
+          <a href="https://bbb-inititiative.netlify.app/" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-1.5 ml-1 pl-2.5 border-l border-h4h-glass-border">
+            <Image src="/bbb-logo.jpeg" alt="Byte By Byte" width={22} height={22} className="h-[22px] w-[22px] rounded-md" />
+            <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-h4h-text-muted hover:text-h4h-primary transition-colors">BBB</span>
+          </a>
 
           {/* Desktop links — horizontal scrollable */}
           <div className="hidden lg:flex items-center gap-0.5 overflow-x-auto scrollbar-none">

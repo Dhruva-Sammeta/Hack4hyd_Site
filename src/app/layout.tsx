@@ -25,11 +25,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Hack4Hyd — Hyderabad's Premier Student Hackathon",
+    default: "Hack4Hyd — Hyderabad's Premier Student Hackathon | A Byte By Byte Initiative",
     template: "%s | Hack4Hyd",
   },
   description:
-    "Hack4Hyd — Hyderabad's biggest student-led hackathon. Build innovative solutions, compete for prizes, and connect with the tech community. August 1, 2026.",
+    "Hack4Hyd — Hyderabad's biggest student-led hackathon, supported by Byte By Byte. Build innovative solutions, compete for ₹35,000 in prizes, and connect with the tech community. August 1, 2026.",
   keywords: [
     "Hack4Hyd",
     "Hack4Hyd",
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Hack4Hyd — Hyderabad's Premier Student Hackathon",
+    title: "Hack4Hyd — Hyderabad's Premier Student Hackathon | A Byte By Byte Initiative",
     description:
-      "Build, innovate, compete. Join Hyderabad's biggest student hackathon — August 1, 2026.",
+      "Build, innovate, compete. Join Hyderabad's biggest student hackathon — supported by Byte By Byte. August 1, 2026.",
     type: "website",
     siteName: "Hack4Hyd",
   },

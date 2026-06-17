@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { HeartPulse, Sprout, BookOpen, Lightbulb, Zap } from "lucide-react";
+import { Cpu, Globe, Shield, Lightbulb, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Themes | Hack4Hyd",
@@ -11,51 +11,51 @@ export const metadata: Metadata = {
 
 const themes = [
   {
-    id: "health-tech",
-    title: "Health Tech",
-    icon: HeartPulse,
+    id: "ai-ml",
+    title: "AI & Machine Learning",
+    icon: Cpu,
     color: "text-h4h-primary",
     bg: "bg-h4h-primary/20",
     border: "group-hover:border-h4h-primary/50",
-    glow: "group-hover:shadow-[0_0_30px_rgba(78,195,205,0.2)]",
-    description: "Develop innovative solutions to improve healthcare accessibility, patient outcomes, and medical data management.",
+    glow: "group-hover:shadow-[0_0_30px_rgba(0,210,255,0.15)]",
+    description: "Push the boundaries of artificial intelligence. Build smart systems that learn, adapt, and solve real-world problems using cutting-edge ML techniques.",
     examples: [
-      "AI-driven diagnostic tools",
-      "Telemedicine platforms",
-      "Wearable health monitors",
-      "Mental health support apps"
+      "Intelligent chatbots & assistants",
+      "Computer vision applications",
+      "Predictive analytics tools",
+      "Natural language processing"
     ]
   },
   {
-    id: "rural-tech",
-    title: "Rural Development Tech",
-    icon: Sprout,
+    id: "social-impact",
+    title: "Social Impact & Sustainability",
+    icon: Globe,
     color: "text-h4h-gold",
     bg: "bg-h4h-gold/20",
     border: "group-hover:border-h4h-gold/50",
-    glow: "group-hover:shadow-[0_0_30px_rgba(213,193,95,0.2)]",
-    description: "Bridge the urban-rural divide by building technologies that empower farmers and improve local infrastructure.",
+    glow: "group-hover:shadow-[0_0_30px_rgba(236,188,76,0.15)]",
+    description: "Leverage technology to bridge divides and drive sustainable change. Create solutions that empower communities and protect our planet.",
     examples: [
-      "Smart agriculture & IoT",
-      "Supply chain optimization",
-      "Clean water & energy solutions",
-      "Micro-finance platforms"
+      "Digital inclusion platforms",
+      "Environmental monitoring tools",
+      "Accessible education tech",
+      "Community health solutions"
     ]
   },
   {
-    id: "education-tech",
-    title: "Smart Education Tech",
-    icon: BookOpen,
+    id: "cybersecurity",
+    title: "Cybersecurity & Privacy",
+    icon: Shield,
     color: "text-h4h-accent",
     bg: "bg-h4h-accent/20",
     border: "group-hover:border-h4h-accent/50",
-    glow: "group-hover:shadow-[0_0_30px_rgba(113,83,186,0.2)]",
-    description: "Reimagine the future of learning with platforms that personalize education and provide accessible knowledge.",
+    glow: "group-hover:shadow-[0_0_30px_rgba(0,82,212,0.15)]",
+    description: "Defend the digital frontier. Build tools and platforms that protect data, ensure privacy, and strengthen security infrastructure.",
     examples: [
-      "Gamified learning experiences",
-      "Personalized AI tutors",
-      "Virtual classrooms (AR/VR)",
-      "Skill-building marketplaces"
+      "Privacy-first applications",
+      "Threat detection systems",
+      "Secure communication tools",
+      "Blockchain identity solutions"
     ]
   }
 ];

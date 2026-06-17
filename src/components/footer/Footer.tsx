@@ -25,6 +25,7 @@ const footerLinks = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "Byte By Byte", href: "https://bbb-inititiative.netlify.app/", external: true },
     ],
   },
 ];
@@ -59,6 +60,28 @@ export default function Footer() {
                 Hyderabad
               </span>
             </div>
+
+            {/* Supported By Badge */}
+            <div className="mt-6 pt-5 border-t border-h4h-glass-border">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-h4h-text-muted mb-3">Supported By</p>
+              <a 
+                href="https://bbb-inititiative.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 group"
+              >
+                <Image
+                  src="/bbb-logo.jpeg"
+                  alt="Byte By Byte"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-lg border border-h4h-glass-border transition-all duration-300 group-hover:border-h4h-primary/30 group-hover:shadow-[0_0_15px_rgba(0,210,255,0.15)]"
+                />
+                <span className="text-sm font-semibold text-h4h-text-muted transition-colors duration-300 group-hover:text-h4h-primary">
+                  Byte By Byte
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
@@ -70,12 +93,24 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-h4h-text-muted transition-colors duration-300 hover:text-h4h-text"
-                    >
-                      {link.label}
-                    </Link>
+                    {'external' in link && link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-h4h-text-muted transition-colors duration-300 hover:text-h4h-text inline-flex items-center gap-1"
+                      >
+                        {link.label}
+                        <svg className="w-3 h-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-h4h-text-muted transition-colors duration-300 hover:text-h4h-text"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -89,7 +124,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Hack4Hyd. All rights reserved.
           </p>
           <p className="text-xs text-h4h-text-muted/50">
-            Built with 💙 by the Hack4Hyd Team
+            A <a href="https://bbb-inititiative.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-h4h-primary/60 hover:text-h4h-primary transition-colors">Byte By Byte</a> Initiative · Built with 💙 by the Hack4Hyd Team
           </p>
         </div>
       </div>

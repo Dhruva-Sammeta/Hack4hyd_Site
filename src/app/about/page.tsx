@@ -31,6 +31,29 @@ export default function AboutUs() {
             gradient
           />
 
+          {/* Supported By Section */}
+          <section className="flex justify-center">
+            <a 
+              href="https://bbb-inititiative.netlify.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="glass-card px-8 py-5 flex items-center gap-5 group hover:border-h4h-primary/20"
+            >
+              <Image
+                src="/bbb-logo.jpeg"
+                alt="Byte By Byte"
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-xl border border-h4h-glass-border transition-all duration-300 group-hover:border-h4h-primary/30 group-hover:shadow-[0_0_20px_rgba(0,210,255,0.15)]"
+              />
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-h4h-text-muted mb-1">Supported By</p>
+                <p className="text-lg font-bold text-h4h-text group-hover:text-h4h-primary transition-colors">Byte By Byte</p>
+                <p className="text-xs text-h4h-text-muted">Bridging the digital divide</p>
+              </div>
+            </a>
+          </section>
+
           {/* Core Team Section */}
           <section className="space-y-12">
             <div className="flex items-center gap-3 justify-center mb-8">
